@@ -228,7 +228,16 @@ body {
 .card-body .note {
   font-size: 13px;
   line-height: 1.8;
-  color: rgba(190, 220, 236, .72);
+  color: rgba(190, 220, 236, .85);
+}
+/* 卡片底衬：浅水亮背景上保证可读性 */
+.card-body {
+  background: rgba(2, 12, 24, .5);
+  border: 1px solid rgba(140, 220, 255, .14);
+  border-radius: 10px;
+  padding: 8px 12px;
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
 }
 .card .silhouette {
   flex: none;
@@ -313,4 +322,8 @@ body {
 @media (max-width: 640px) {
   .card .silhouette { width: 92px; }
   .ruler-tick { display: none; }
+  /* 移动端：开场标题缩小让位于深度卡片 */
+  #intro h1 { font-size: clamp(38px, 11vw, 64px); }
+  .intro-sub { font-size: 13px; margin-top: 14px; }
+  .intro-hint { margin-top: 26px; }
 }

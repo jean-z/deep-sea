@@ -20,6 +20,17 @@ export default function App() {
     return () => window.removeEventListener('resize', setH)
   }, [])
 
+  /* 开场标题随下潜淡出（移动端首屏卡片密集，避免互相干扰） */
+  useEffect(() => {
+    const intro = document.getElementById('intro')
+    if (!intro) return
+    const onScroll = () => {
+      intro.style.opacity = Math.max(0, 1 - window.scrollY / (window.innerHeight * 0.22))
+    }
+    window.addEventListener('scroll', onScroll, { passive: true })
+    return () => window.removeEventListener('scroll', onScroll)
+  }, [])
+
   /* 唯一 rAF 主循环：滚动深度驱动画布与仪表盘（经命令式 ref，避免 60fps 重渲染） */
   useEffect(() => {
     let raf
