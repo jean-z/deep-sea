@@ -1,0 +1,20 @@
+{
+  "name": "deep-sea",
+  "private": true,
+  "version": "0.1.0",
+  "type": "module",
+  "description": "潜入深渊 —— 滚动式深海漫游（React 19 + Vite 7）",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview"
+  },
+  "dependencies": {
+    "react": "^19.2.0",
+    "react-dom": "^19.2.0"
+  },
+  "devDependencies": {
+    "@vitejs/plugin-react": "^5.0.0",
+    "vite": "^7.1.0"
+  }
+}
